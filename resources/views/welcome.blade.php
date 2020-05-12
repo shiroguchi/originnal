@@ -5,6 +5,7 @@
         <div class="text-center">
             <h1>BookShelf</h1>
             <h2>Please sing up or Login</h2>
+            {!! link_to_route('signup.get', 'Sign up now!', [], ['class' => 'btn btn-lg btn-primary']) !!}
         </div>
     </div>
 @endsection
