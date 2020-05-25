@@ -12,12 +12,14 @@
                 @if (Auth::check())<!--ログインしているかどうか-->
                     <!--User一覧-->
                     <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
+                    <!--Create-->
                     
+                    <li class="nav-item">{!! link_to_route('contents.create', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('serch.getSearch', '検索', [], ['class' => 'nav-link']) !!}</li>
                     <!--ドロップダウン-->
                     <li class="nav-item dropdowm">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{Auth::user()->name}}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
-                            <li class="dropdown-item">{!! link_to_route('contents.show', 'My profile', ['id' => Auth::id()]) !!}</li>
                             <li class="dropdowm-divider"></li>
                             <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
                         </ul>
