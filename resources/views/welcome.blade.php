@@ -20,6 +20,23 @@
                 {!! link_to_route('login', 'Login', [], ['class' => 'btn btn-lg btn-outline-primary']) !!}
             </div>
         </div>
+        
+<ul class="details">
+	<li>
+		<!--<img src="image/book4.jpg">-->
+		<div style="width:200px height:200px">
+		    <font color="white" size="20px">BookShelfとは・・・？</font>
+		</div>
+		<dl>
+			<dt>BookShelf</dt>
+			<dd>本の情報共有ツールです。自分が読んだ本の要約・感想・意見などを他のユーザーと共有できます。
+			他ユーザーの投稿を閲覧することで、読みたい本が見つかるかもしれないですね。
+			また、投稿することで今まで自分が読んだ本の情報を保存しておくノートとしても使用できます。BookShelfを利用して素敵な読書ライフを送ってみませんか？</dd>
+			
+		</dl>
+	</li>
+	<!-- 略 -->
+</ul>
     </div>
     @endif
 @endsection

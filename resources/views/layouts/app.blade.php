@@ -9,8 +9,30 @@
        　<style>
 .jumbotron {
 	background-image: url(image/book4.jpg);
-	background-repeat:repeat
+	background-repeat:repeat;
 	}
+.details{
+  list-style: none;
+}
+.details li{
+    position: relative;
+}
+.details dl{
+    position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 16px 24px;
+
+	color: #fff;
+	background: rgba(112, 191, 63,.9);
+	
+	overflow: hidden;
+	transition: opacity .6s, transform .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.details:not(:hover) dl {
+	opacity: 0;
+	transform: translateY(100%);
+}
 </style>
     </head>
 
