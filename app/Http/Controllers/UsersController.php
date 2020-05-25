@@ -7,16 +7,14 @@ use Illuminate\Http\Request;
 use App\User;
 
 class UsersController extends Controller
-{  /*
-    public function show($id)
-    {
-        $user = User::find($id);
+{  
+    public function index(){
+        $users= User::orderBy('id', 'desc')->paginate(10);
         
-        return view('users.show',[
-            'user' => $user,
+        return view('users.list',[
+            'users' => $users,
             ]);
     }
-    */
     
     public function show($id)
     {

@@ -23,7 +23,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 //ユーザ機能
 Route::group(['middleware' => 'auth'], function (){
-    Route::resource('users', 'UsersController', ['only' => ['show']]);
+    Route::resource('users', 'UsersController', ['only' => ['index','show']]);
     Route::resource('contents', 'ContentsController',['only' => ['store', 'destroy','index','show', 'update','create','edit']]);
     
     Route::group(['prefix' => 'users/{id}'],function (){

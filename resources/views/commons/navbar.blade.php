@@ -11,7 +11,7 @@
             <ul class="navbar-nav">
                 @if (Auth::check())<!--ログインしているかどうか-->
                     <!--User一覧-->
-                    <li class="nav-item"><a href="#" class="nav-link">Users</a></li>
+                    <li class="nav-item">{!! link_to_route('users.index', 'Users', [], ['class' => 'nav-link']) !!}</li>
                     <!--Create-->
                     
                     <li class="nav-item">{!! link_to_route('contents.create', '新規投稿', [], ['class' => 'nav-link']) !!}</li>
