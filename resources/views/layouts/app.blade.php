@@ -33,6 +33,13 @@
 	opacity: 0;
 	transform: translateY(100%);
 }
+
+.toukou p{
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
 </style>
     </head>
 

@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
     @foreach ($contents as $content)
-        <li class="media mb-3 border" style="width:85%">
+        <li class="media mb-1 border" style="width:85%">
             
             <img class="mr-2 rounded" src="{{ Gravatar::src($content->user->email, 50) }}" alt="">
             <div class="media-body">
@@ -40,16 +40,35 @@
                         @endif
                     </div>
                 </div>
-                <div class="row ml-2">
-                    <p class="mb-0 font-weight-bold mr-2">{!! nl2br(e($content->booktitle)) !!}</p>
-                </div>
-                <div class="row border" style="width:100%">
+                <div class="toukou">
+                    <div class="row ml-2">
+                        <p class="mb-0 font-weight-bold mr-2">{!! nl2br(e($content->booktitle)) !!}</p>
+                    </div>
+                    <div class="row border" style="width:100%">
                     
-                    <p class="mb-0 col-4 text-break text-truncate" style="max-width:500px">{!! nl2br(e($content->memo)) !!}</p>
+                        <p class="mb-0 " style="">{!! nl2br(e($content->memo)) !!}</p>
+                    </div>
                 </div>
+                <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="font-size:12px">
+                    <i class="fas fa-comments"></i>コメントを表示
+                </a>
                 
             </div>
         </li>
+        <div class="collapse" id="collapseExample" style="width:85%">
+        <div class="border mb-2 ">
+            @forelse($content->comments as $comment)
+
+            {!! link_to_route('users.favorites', $content->user->name, ['id' => $content->user->id]) !!}
+            {!! nl2br(e($comment->comment)) !!}<br>
+
+        @empty
+
+            <p>コメントはまだありません</p>
+
+        @endforelse     
+       </div>
+        </div>
     @endforeach
 </ul>
 {{ $contents->links('pagination::bootstrap-4') }}

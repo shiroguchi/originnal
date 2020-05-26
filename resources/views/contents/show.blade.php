@@ -1,21 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="d-flex justify-content-center">
-<!--カード(名前＋アイコン)-->
+
+ 
+        <div class="col-sm-9">
+             <h4>投稿詳細ページ</h4>
             <aside>
-                    <h4><class="card-title">{{$user->name }}</h4>
+                    <h6><class="card-title">{{$user->name }}</h6>
                
                     <img class="rounded img-fluid" src="{{ Gravatar::src($user->email, 50) }}" alt="">
                
             
            </aside>
- 
-        <div class="col-sm-9">
-             <h4>投稿詳細ページ</h4>
-            <p style=>題名</p>
-            <p class="mb-0 border font-weight-bold">{!! nl2br(e($content->booktitle)) !!}</p>
-            <p>メモ</p> 
+            <p class="mb-0">題名</p>
+            <p class="mt-0 border font-weight-bold">{!! nl2br(e($content->booktitle)) !!}</p>
+            <p class="mb-0">メモ</p> 
             <div class="border"style="">
             <p class="mb-0 text-wrap text-break wordwWrap-breakWord " style=" width:300px">{!! nl2br(e($content->memo)) !!}</p>
         </div>
@@ -29,7 +30,7 @@
             {!! link_to_route('contents.edit', '編集する', ['id' => $content->id], ['class' => 'btn btn-light rounded-pill btn-lg']) !!}
             @include('content_recommend.recommend_button_b',['content' => $content])
             {!! Form::open(['route' => ['contents.destroy', $content->id], 'method' =>'delete']) !!}
-                {!! Form::submit('削除する', ['class' => 'btn btn-danger rounded-pill btn-lg']) !!}
+                {!! Form::submit('削除する', ['class' => 'btn btn-danger rounded-pill btn-lg btn-dell']) !!}
             {!! Form::close() !!}
             @endif
             </div>
