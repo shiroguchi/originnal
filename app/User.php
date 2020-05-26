@@ -32,6 +32,12 @@ class User extends Authenticatable
         return $this->hasMany(Content::class);
     }
     
+     public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+    
+    
     //お気に入り機能↓
      //$user->favorites()で$userがお気に入り機能している投稿の取得
     public function favorites()

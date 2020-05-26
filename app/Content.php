@@ -13,6 +13,11 @@ class Content extends Model
         return $this->belongsTo(User::class);
     }
     
+    //$content->commtentsで$commentへのコメントを取得
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+    
     //$content->favorite_usersで$contentをお気に入り機能しているユーザの取得
     public function favorite_users()
     {

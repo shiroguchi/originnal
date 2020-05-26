@@ -34,5 +34,27 @@
             @endif
             </div>
         </div>
+        <div>
+            {!! Form::open(['route' => ['comments.store',$content->id]]) !!}
+             {{ Form::hidden('content_id',$content->id) }}
+             
+            {!! Form::label('comment','コメントを入力してください') !!}
+            {!! Form::textarea('comment',old('comment')) !!}
+
+            {!! Form::submit('コメントする') !!}
+
+            {!! Form::close() !!}
+
+        @forelse($content->comments as $comment)
+
+            {!! $comment->user->name !!}
+            {!! nl2br(e($comment->comment)) !!}<br>
+
+        @empty
+
+            <p>コメントはまだありません</p>
+
+        @endforelse
+        </div>
     </div>
 @endsection

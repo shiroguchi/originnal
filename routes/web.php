@@ -40,6 +40,8 @@ Route::group(['middleware' => 'auth'], function (){
     //検索ページ
    // Route::resource('serch', 'SerchController');
     Route::get('serch', 'SerchController@getSearch')->name('serch.getSearch');
+    // Route::get('serchcategory', 'SerchController@serchCategory')->name('serch.category');
+    Route::resource('comments','CommentsController',['only' => ['store']]);
 });
 /*
 //投稿詳細ページ

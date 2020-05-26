@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 //Illuminate\Http\Request;から変更↓
 use Request;
+//use Illuminate\Http\Request;
 
 use App\Content;
 
 use View;
+
+use App\User;
 
 class SerchController extends Controller
 {	/*
@@ -26,5 +29,16 @@ class SerchController extends Controller
 	}
 
 	return View::make('serch.index')->with('contents', $contents);
+}
+
+    public function serchCategory(Request $request){
+    /*	$query = User::query();
+    	$search2 = $request->input('category');
+    	if ($request->has('category') && $search2 != ('カテなし')) {
+            $query->where('category', $search2)->get();
+        }else{
+		$contents = Content::paginate(10);
+	}
+    return View::make('serch.index')->with('contents', $contents);*/
 }
 }

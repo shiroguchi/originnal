@@ -14,11 +14,7 @@
            </aside>
     <div class="col-sm-8">
         <h5>新規投稿画面</h5>
-        <div class="text-center mt-3">
-            <!--カテゴリー設定、おすすめに追加ボタン-->
-            @include('content_favorite.favorite_button_b',['content' => $content])
-           
-            </div>
+       
     <!--投稿入力欄-->
         @if (Auth::id() == $user->id)
             {!! Form::model($content,['route' => 'contents.store']) !!}

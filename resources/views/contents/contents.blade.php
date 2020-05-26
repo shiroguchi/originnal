@@ -32,7 +32,7 @@
                        <!--投稿削除ボタン投稿ユーザーのみ表示-->
                         @if (Auth::id() == $content->user_id)
                             {!! Form::open(['route' => ['contents.destroy', $content->id], 'method' =>'delete']) !!}
-                                {!! Form::submit('×', ['class' => 'btn btn-danger btn-sm']) !!}
+                                {!! Form::submit('×', ['class' => 'btn btn-danger btn-sm btn-dell']) !!}
                             {!! Form::close() !!}
                         @endif
                         @if (Auth::id() != $content->user_id)
